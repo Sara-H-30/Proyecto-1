@@ -13,7 +13,7 @@ public abstract class Atraccion implements LugarTrabajo {
     protected  int capacidadMax;
     protected  int empleadosMin;
     protected  String ubicacion;
-    protected  String nivelExclusividad;
+    protected  int nivelExclusividad; // 0 = Basico, 1=familiar, 2=oro, 3=,diamante
     protected List<Empleado> empleadosAsignados;
     protected  boolean esDeTemporada;
     protected  Month mesInicioTemporada; 
@@ -23,13 +23,13 @@ public abstract class Atraccion implements LugarTrabajo {
     
  
     // Constructor para atracciones NO de temporada
-    public Atraccion(String nombre, int capacidadMax, int empleadosMin, String ubicacion, String nivelEsclusividad,
+    public Atraccion(String nombre, int capacidadMax, int empleadosMin, String ubicacion, int nivelExclusividad,
                      String condicionClimatica) {
         this.nombre = nombre;
         this.capacidadMax = capacidadMax;
         this.empleadosMin = empleadosMin;
         this.ubicacion = ubicacion;
-        this.nivelExclusividad = nivelEsclusividad;
+        this.nivelExclusividad = nivelExclusividad;
         this.CondicionClimatica = condicionClimatica;
         this.esDeTemporada = false;
         this.mesInicioTemporada = null;
@@ -38,13 +38,13 @@ public abstract class Atraccion implements LugarTrabajo {
     }
 
     // Constructor para atracciones de temporada (usando Month)
-    public Atraccion(String nombre, int capacidadMax, int empleadosMin, String ubicacion, String nivelEsclusividad,
+    public Atraccion(String nombre, int capacidadMax, int empleadosMin, String ubicacion, int nivelExclusividad,
                      Month mesInicioTemporada, Month mesFinTemporada, String condicionClimatica) {
         this.nombre = nombre;
         this.capacidadMax = capacidadMax;
         this.empleadosMin = empleadosMin;
         this.ubicacion = ubicacion;
-        this.nivelExclusividad = nivelEsclusividad;
+        this.nivelExclusividad = nivelExclusividad;
         this.esDeTemporada = true;
         this.mesInicioTemporada = mesInicioTemporada;
         this.mesFinTemporada = mesFinTemporada;
@@ -82,10 +82,10 @@ public abstract class Atraccion implements LugarTrabajo {
 		this.ubicacion = ubicacion;
 	}
 
-	public String getNivelExclusividad() {
+	public int getNivelExclusividad() {
 		return nivelExclusividad;
 	}
-	public void setNivelExclusividad(String nivelExclusividad) {
+	public void setNivelExclusividad(int nivelExclusividad) {
 		this.nivelExclusividad = nivelExclusividad;
 	}
 

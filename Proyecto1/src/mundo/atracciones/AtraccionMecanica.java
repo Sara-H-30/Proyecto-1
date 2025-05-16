@@ -7,6 +7,20 @@ import usuario.Empleado;
 public class AtraccionMecanica extends Atraccion {
 	
 	
+	
+	public AtraccionMecanica(String nombre, int capacidadMax, int empleadosMin, String ubicacion,
+			int nivelExclusividad, String condicionClimatica, double alturaMin, double alturaMax,
+			double alturaMinima, int pesoMax, String nivelRiesgo, List<String> restricciones) {
+		super(nombre, capacidadMax, empleadosMin, ubicacion, nivelExclusividad, condicionClimatica);
+		this.alturaMin = alturaMin;
+		this.alturaMax = alturaMax;
+		this.alturaMinima = alturaMinima;
+		this.pesoMax = pesoMax;
+		this.nivelRiesgo = nivelRiesgo;
+		this.restricciones = restricciones;
+	}
+
+
 	protected  double alturaMin;
 	protected  double alturaMax;
 	protected  double alturaMinima;
@@ -16,19 +30,6 @@ public class AtraccionMecanica extends Atraccion {
 	
 	
 
-	public AtraccionMecanica(String tipo, int capacidadMax, int empleadosMin, String ubicacion,
-			String nivelEsclusividad, List<Empleado> empleadosAsignados, boolean esDeTemporada,
-			LocalDate fechaInicioTemporada, LocalDate fechaFinTemporada, String condicionClimatica, double alturaMin,
-			double alturaMax, double alturaMinima, int pesoMax, String nivelRiesgo, List<String> restricciones) {
-		super(tipo, capacidadMax, empleadosMin, ubicacion, nivelEsclusividad, empleadosAsignados, esDeTemporada,
-				fechaInicioTemporada, fechaFinTemporada, condicionClimatica);
-		this.alturaMin = alturaMin;
-		this.alturaMax = alturaMax;
-		this.alturaMinima = alturaMinima;
-		this.pesoMax = pesoMax;
-		this.nivelRiesgo = nivelRiesgo;
-		this.restricciones = restricciones;
-	}
 	public double getAlturaMin() {
 		return alturaMin;
 	}
